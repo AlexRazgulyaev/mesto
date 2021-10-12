@@ -1,0 +1,9 @@
+.profile__edit-button {
+  align-self: flex-end;
+  box-sizing: border-box;
+  max-width: 24px;
+  max-height: 24px;
+  background-color: #000;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
