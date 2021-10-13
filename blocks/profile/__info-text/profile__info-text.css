@@ -1,15 +1,21 @@
 .profile__info-text {
   max-width: 336px;
-  display: flex;
+  /*display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: center;*/
+  display: grid;
+  grid-template-areas:
+    "name edit"
+    "about .";
+    gap: 18px 16px;
 }
 
 @media (max-width: 767px) {
   .profile__info-text {
-    justify-content: center;
-    line-height: 14px;
+    grid-template-areas:
+    ". name edit"
+    ". about .";
     margin-bottom: 36px;
-    row-gap: 14px;
+    gap: 10px 14px;
   }
 }

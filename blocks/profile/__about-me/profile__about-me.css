@@ -4,11 +4,13 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
+  grid-area: about;
 }
 
 @media (max-width: 767px) {
   .profile__about-me {
     font-size: 14px;
     line-height: 17px;
+    text-align: center;
   }
 }
