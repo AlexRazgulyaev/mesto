@@ -4,3 +4,12 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+@media (max-width: 767px) {
+  .profile__info-text {
+    justify-content: center;
+    line-height: 14px;
+    margin-bottom: 36px;
+    row-gap: 14px;
+  }
+}

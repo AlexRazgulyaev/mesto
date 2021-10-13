@@ -7,3 +7,10 @@
   border: 1px solid #fff;
   cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  .profile__edit-button {
+    max-width: 18px;
+    max-height: 18px;
+  }
+}

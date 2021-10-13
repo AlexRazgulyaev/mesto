@@ -3,3 +3,9 @@
   display: flex;
   padding-bottom: 60px;
 }
+
+@media (max-width: 930px) {
+  .footer {
+    width: calc(100% - 38px);
+  }
+}

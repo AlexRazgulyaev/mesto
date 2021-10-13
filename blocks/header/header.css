@@ -5,3 +5,9 @@
   min-height: 74px;
   padding-top: 45px;
 }
+
+@media (max-width: 950px) {
+  .header {
+    width: calc(100% - 54px);
+  }
+}
