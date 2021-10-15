@@ -5,6 +5,9 @@
   font-size: 18px;
   line-height: 22px;
   grid-area: about;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
