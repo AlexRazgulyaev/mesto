@@ -1,8 +1,5 @@
 .profile__info-text {
   max-width: 336px;
-  /*display: flex;
-  flex-wrap: wrap;
-  align-items: center;*/
   display: grid;
   grid-template-areas:
     "name edit"
