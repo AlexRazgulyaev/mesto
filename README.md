@@ -2,7 +2,7 @@
 
 =====
 
-[Место]()
+[Место](https://alexrazgulyaev.github.io/mesto/)
 
 ## Обзор
 
