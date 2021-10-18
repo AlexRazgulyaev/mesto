@@ -1,7 +1,6 @@
 .popup__container {
   width: 100%;
-  margin-bottom: 48px;
   display: grid;
-  grid-template-rows: 27px 27px;
+  grid-template-rows: 27px 27px 1fr;
   row-gap: 30px;
 }

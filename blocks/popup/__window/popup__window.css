@@ -14,7 +14,7 @@
 @media (max-width: 470px) {
   .popup__window {
     min-width: calc(100% - 38px);
-    padding: 22px 25px;
+    padding: 25px 22px;
     margin-top: 123px;
   }
 }
