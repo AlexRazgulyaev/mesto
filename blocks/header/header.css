@@ -1,13 +1,14 @@
 .header {
   max-width: 880px;
-  display: flex;
-  border-bottom: 1px solid #545454;
-  min-height: 74px;
+  display: grid;
+  grid-template-rows: minmax(74px, 1fr);
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
   padding-top: 45px;
 }
 
 @media (max-width: 950px) {
   .header {
+    grid-template-rows: minmax(56px, 1fr);
     width: calc(100% - 54px);
   }
 }
