@@ -24,109 +24,97 @@
             />
             <div class="profile__info-text">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button link"></button>
+              <button class="profile__edit-button link" type="button"></button>
               <p class="profile__about-me">Исследователь океана</p>
             </div>
           </div>
 
-          <button class="profile__add-button link">
-          </button>
+          <button class="profile__add-button link" type="button"></button>
         </section>
 
         <section class="elements">
-          <ul class="elements__list">
-            <li class="elements__element">
+          <ul class="cards">
+            <li class="cards__card">
               <img
-                src="./images/karachaevsk.png"
+                src="./images/karachaevsk.jpg"
                 alt="Карачаевск"
-                class="elements__image"
+                class="cards__image"
               />
-              <div class="elements__element-text">
-                <h2 class="elements__title">Карачаевск</h2>
-                <input
-                  type="image"
-                  src="./images/like.svg"
-                  alt="Лайк"
-                  class="elements__like link"
-                />
+              <div class="cards__card-text">
+                <h2 class="cards__title">Карачаевск</h2>
+                <button type="button" class="cards__like link"></button>
               </div>
             </li>
-            <li class="elements__element">
-              <img src="./images/elbrus.png" alt="Гора Эльбрус" class="elements__image" />
-              <div class="elements__element-text">
-                <h2 class="elements__title">Гора Эльбрус</h2>
-                <input
-                  type="image"
-                  src="./images/like.svg"
-                  alt="Лайк"
-                  class="elements__like link"
-                />
-              </div>
-            </li>
-            <li class="elements__element">
-              <img src="./images/dombaj.png" alt="Домбай" class="elements__image" />
-              <div class="elements__element-text">
-                <h2 class="elements__title">Домбай</h2>
-                <input
-                  type="image"
-                  src="./images/like.svg"
-                  alt="Лайк"
-                  class="elements__like link"
-                />
-              </div>
-            </li>
-            <li class="elements__element">
-              <img src="./images/elbrus.png" alt="Гора Эльбрус" class="elements__image" />
-              <div class="elements__element-text">
-                <h2 class="elements__title">Гора Эльбрус</h2>
-                <input
-                  type="image"
-                  src="./images/like.svg"
-                  alt="Лайк"
-                  class="elements__like link"
-                />
-              </div>
-            </li>
-            <li class="elements__element">
-              <img src="./images/dombaj.png" alt="Домбай" class="elements__image" />
-              <div class="elements__element-text">
-                <h2 class="elements__title">Домбай</h2>
-                <input
-                  type="image"
-                  src="./images/like.svg"
-                  alt="Лайк"
-                  class="elements__like link"
-                />
-              </div>
-            </li>
-            <li class="elements__element">
+            <li class="cards__card">
               <img
-                src="./images/karachaevsk.png"
-                alt="Карачаево-Черкессия"
-                class="elements__image"
+                src="./images/elbrus.jpg"
+                alt="Гора Эльбрус"
+                class="cards__image"
               />
-              <div class="elements__element-text">
-                <h2 class="elements__title">Карачаево-Ч...</h2>
-                <input
-                  type="image"
-                  src="./images/like.svg"
-                  alt="Лайк"
-                  class="elements__like link"
-                />
+              <div class="cards__card-text">
+                <h2 class="cards__title">Гора Эльбрус</h2>
+                <button type="button" class="cards__like link"></button>
+              </div>
+            </li>
+            <li class="cards__card">
+              <img
+                src="./images/dombaj.jpg"
+                alt="Домбай"
+                class="cards__image"
+              />
+              <div class="cards__card-text">
+                <h2 class="cards__title">Домбай</h2>
+                <button type="button" class="cards__like link"></button>
+              </div>
+            </li>
+            <li class="cards__card">
+              <img
+                src="./images/elbrus.jpg"
+                alt="Гора Эльбрус"
+                class="cards__image"
+              />
+              <div class="cards__card-text">
+                <h2 class="cards__title">Гора Эльбрус</h2>
+                <button type="button" class="cards__like link"></button>
+              </div>
+            </li>
+            <li class="cards__card">
+              <img
+                src="./images/dombaj.jpg"
+                alt="Домбай"
+                class="cards__image"
+              />
+              <div class="cards__card-text">
+                <h2 class="cards__title">Домбай</h2>
+                <button type="button" class="cards__like link"></button>
+              </div>
+            </li>
+            <li class="cards__card">
+              <img
+                src="./images/karachaevsk.jpg"
+                alt="Карачаево-Черкессия"
+                class="cards__image"
+              />
+              <div class="cards__card-text">
+                <h2 class="cards__title">Карачаево-Ч...</h2>
+                <button type="button" class="cards__like link"></button>
               </div>
             </li>
           </ul>
         </section>
 
-        <section class="popup">
-          <form class="popup__container">
-            <input type="image" src="./images/close-icon.svg" alt="close-icon" class="popup__close link">
+        <div class="popup">
+          <div class="popup__window">
+            <button type="reset" class="popup__close link"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" name="name" value="Жак-Ив Кусто" class="popup__name input">
-            <input type="text" name="about-me" value="Исследователь океана" class="popup__about-me input">
+            <form name="profile-form" class="popup__container">
+              <input type="text" name="name" value="Жак-Ив Кусто" class="popup__input">
+              <input type="text" name="about-me" value="Исследователь океана" class="popup__input">
+            </form>
             <button class="popup__submit link" type="submit">Сохранить</button>
-          </form>
-        </section>
+          </div>
+
+        </div>
       </main>
 
       <footer class="footer page__footer">
@@ -135,6 +123,5 @@
     </div>
 
     <script src="./scripts/index.js"></script>
-
   </body>
 </html>
