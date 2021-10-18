@@ -4,15 +4,17 @@
   grid-template-areas:
     "name edit"
     "about .";
-    gap: 18px 16px;
+    gap: 14px 18px;
+    align-self: center;
 }
 
 @media (max-width: 767px) {
   .profile__info-text {
+    grid-template-columns: 18px 1fr 18px;
     grid-template-areas:
     ". name edit"
     ". about .";
     margin-bottom: 36px;
-    gap: 10px 14px;
+    column-gap: 10px;
   }
 }

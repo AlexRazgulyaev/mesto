@@ -6,9 +6,10 @@
   padding-top: 45px;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 930px) {
   .header {
     grid-template-rows: minmax(56px, 1fr);
-    width: calc(100% - 54px);
+    width: 100%;
+    padding-top: 28px;
   }
 }

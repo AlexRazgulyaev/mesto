@@ -1,7 +1,7 @@
 .popup__window {
   position: relative;
   background-color: #fff;
-  border: 1px solid #000;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .15);
   border-radius: 10px;
   min-width: 430px;
   padding: 34px 36px 37px;
@@ -15,5 +15,6 @@
   .popup__window {
     min-width: calc(100% - 38px);
     padding: 22px 25px;
+    margin-top: 123px;
   }
 }
