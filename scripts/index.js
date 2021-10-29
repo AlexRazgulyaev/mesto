@@ -35,8 +35,8 @@ const initialCards = [                                                          
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
-const cardContainer = document.querySelector(".cards");                // получили контейнер
-const cardTemplate = document.querySelector("#card-template").content; // получили template
+const cardContainer = document.querySelector(".cards"); // получили контейнер
+const cardTemplate = document.querySelector(".card_template").content; // получили template
 
 const cardImageElement = cardTemplate.querySelector(".cards__image");  // находим в template фото
 const cardTitleElement = cardTemplate.querySelector(".cards__title");  // находим в template заголовок
@@ -51,16 +51,30 @@ const cardTitleElement = cardTemplate.querySelector(".cards__title");  // нах
 //   cardContainer.append(cardElement);
 // }
 
-initialCards.forEach(function(item) {
-  cardTitleElement.textContent = item.name;                                       // присвоили из массива заголовок
-  cardImageElement.src = item.link;                                               // присвоили из массива ссылку на фото
-  cardImageElement.alt = item.name;                                               // присвоили из массива alt фото
+// initialCards.forEach(function(item) {
+//   cardTitleElement.textContent = item.name; // присвоили из массива заголовок
+//   cardImageElement.src = item.link;         // присвоили из массива ссылку на фото
+//   cardImageElement.alt = item.name;         // присвоили из массива alt фото
+//   const cardElement = cardTemplate.querySelector(".cards__card").cloneNode(true); // клонировали c вложением
+
+//   cardContainer.append(cardElement);                  // вставили в конец контейнера
+// })
+
+function main() {
+  initialCards.forEach(function(element) {             // прошли по всем элементам массива
+    renderPhoto(element.name, element.link);
+  })
+}
+
+function renderPhoto(name, link) {
   const cardElement = cardTemplate.querySelector(".cards__card").cloneNode(true); // клонировали c вложением
 
-  cardContainer.append(cardElement);                                              // вставили в конец контейнера
-})
+  cardTitleElement.textContent = name;                // присвоили из массива заголовок
+  cardImageElement.src = link;                        // присвоили из массива ссылку на фото
+  cardImageElement.alt = name;                        // присвоили из массива alt фото
 
-
+  cardContainer.append(cardElement);                  // вставили в конец контейнера
+}
 
 
 
@@ -93,8 +107,8 @@ function formSubmitHandler(evt) {
 
 
 
-buttonEditProfile.addEventListener("click", function() {openPopup(popupEditProfileElement)});
-formEditProfileElement.addEventListener("submit", formSubmitHandler);
-buttonAddPhoto.addEventListener("click", function() {openPopup(popupAddPhotoElement)});
-buttonCloseProfile.addEventListener("click", function() {closePopup(popupEditProfileElement)});
-buttonCloseAddPhoto.addEventListener("click", function() {closePopup(popupAddPhotoElement)});
+buttonEditProfile.addEventListener("click", openPopup);
+formElement.addEventListener("submit", formSubmitHandler);
+buttonCloseProfile.addEventListener("click", closePopup);
+
+main();
