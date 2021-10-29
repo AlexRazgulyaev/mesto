@@ -52,7 +52,7 @@ const cardTitleElement = cardTemplate.querySelector(".cards__title");  // нах
 // }
 
 initialCards.forEach(function(item) {
-  cardTitleElement.textContent = item.name;                                        // присвоили из массива заголовок
+  cardTitleElement.textContent = item.name;                                         // присвоили из массива заголовок
   cardImageElement.src = item.link;                                                // присвоили из массива ссылку на фото
   cardImageElement.alt = item.name;                                                // присвоили из массива alt фото
   const cardElement = cardTemplate.querySelector(".cards__card").cloneNode(true);  // клонировали c вложением
