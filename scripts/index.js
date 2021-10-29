@@ -60,8 +60,19 @@ initialCards.forEach(function(item) {
   cardContainer.append(cardElement);                                               // вставили в конец контейнера
 })
 
+function main() {
+  initialCards.forEach((element) => {             // прошли по всем элементам массива
+    renderPhoto(element.name, element.link);
+  })
+}
+
+function renderPhoto(name, link) {
 
 
+  const cardElement = cardTemplate.querySelector(".cards__card").cloneNode(true); // клонировали c вложением
+
+  cardContainer.append(cardElement);                  // вставили в конец контейнера
+}
 
 
 
