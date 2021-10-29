@@ -94,8 +94,8 @@ function openPopup(popupElement) {
   jobInput.value = jobElement.textContent;
   }
 }
-function closePopup(popupElemen) {
-  popupElemen.classList.remove("popup_opened");
+function closePopup(popupElement) {
+  popupElement.classList.remove("popup_opened");
 }
 
 function formSubmitHandler(evt) {
