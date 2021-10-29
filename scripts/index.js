@@ -58,17 +58,18 @@ const cardTitleElement = cardTemplate.querySelector(".cards__title"); // нах�
 // })
 
 function main() {
-  initialCards.forEach(function(element) {             // прошли по всем элементам массива
+  initialCards.forEach((element) => {             // прошли по всем элементам массива
     renderPhoto(element.name, element.link);
   })
 }
 
 function renderPhoto(name, link) {
-  const cardElement = cardTemplate.querySelector(".cards__card").cloneNode(true); // клонировали c вложением
 
   cardTitleElement.textContent = name;                // присвоили из массива заголовок
   cardImageElement.src = link;                        // присвоили из массива ссылку на фото
   cardImageElement.alt = name;                        // присвоили из массива alt фото
+
+  const cardElement = cardTemplate.querySelector(".cards__card").cloneNode(true); // клонировали c вложением
 
   cardContainer.append(cardElement);                  // вставили в конец контейнера
 }
