@@ -36,7 +36,7 @@ const initialCards = [                                                          
   },
 ];
 const cardContainer = document.querySelector(".cards"); // получили контейнер
-const cardTemplate = document.querySelector("#card-template").content; // получили template
+const cardTemplate = document.querySelector(".card-template").content; // получили template
 
 const cardImageElement = cardTemplate.querySelector(".cards__image"); // находим в template фото
 const cardTitleElement = cardTemplate.querySelector(".cards__title"); // находим в template заголовок
@@ -52,7 +52,7 @@ function renderPhoto(name, link) {
   cardImageElement.src = link; // присвоили из массива ссылку на фото
   cardImageElement.alt = name; // присвоили из массива alt фото
 
-  const cardElement = cardTemplate.querySelector(".cards__card").cloneNode(true); // клонировали c вложением
+  const cardElement = cardTemplate.cloneNode(true); // клонировали c вложением
 
   cardContainer.append(cardElement); // вставили в конец контейнера
 }
@@ -64,8 +64,8 @@ function openPopup(popupElement) {
     jobInput.value = jobElement.textContent;
   }
 }
-function closePopup(popupElemen) {
-  popupElemen.classList.remove("popup_opened");
+function closePopup(popupElement) {
+  popupElement.classList.remove("popup_opened");
 }
 
 function formSubmitHandler(evt) {
