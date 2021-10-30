@@ -3,6 +3,3 @@
   background-image: url(../../../../images/like-active.svg);
 }
 
-.cards__like_active:hover {
-  opacity: 0.5;
-}

@@ -60,6 +60,7 @@ function renderPhoto(name, link) {
   const cardElement = cardTemplate.cloneNode(true); // клонировали c вложением
 
   cardElement.querySelector(".cards__like").addEventListener("click", likePhotoHandler); // слушаем клик по элементу like
+  cardElement.querySelector(".cards__delete").addEventListener("click", deletePhotoHandler); // слушаем клик по элементу delete
 
   cardContainer.prepend(cardElement); // вставили в начало контейнера
 }
@@ -89,6 +90,10 @@ function formAddSubmitHandler(evt) {
 }
 function likePhotoHandler(evt) {
  evt.target.closest(".cards__like").classList.toggle("cards__like_active");  //находим ближайшей элемент like и переключаем модификатор
+}
+
+function deletePhotoHandler(evt) {
+  evt.target.closest(".cards__card").remove();   //находим ближайшую карточку и удаляем
 }
 
 buttonEditProfile.addEventListener("click", function () {
