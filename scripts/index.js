@@ -7,6 +7,9 @@ const jobInput = formEditProfileElement.querySelector(".popup__input_type_job");
 const buttonAddPhoto = document.querySelector(".profile__add-button");             // кнопка добавления фото
 const popupAddPhotoElement = document.querySelector(".popup_type_add-photo");      // popup добавления фото
 const buttonCloseAddPhoto = popupAddPhotoElement.querySelector(".popup__close");   // кнопка закрытия popup
+const formAddPhotoElement = popupAddPhotoElement.querySelector(".popup__container");  // форма добавления фото
+const namePlaceInput = formAddPhotoElement.querySelector(".popup__input_type_name-place"); // название места в input
+const linkInput = formAddPhotoElement.querySelector(".popup__input_type_link");            // ссылка на место в input
 const nameElement = document.querySelector(".profile__name");                      // name на сайте
 const jobElement = document.querySelector(".profile__about-me");                   // job на сайте
 const initialCards = [                                                             // массив фотографий
@@ -45,6 +48,8 @@ function main() {
   initialCards.forEach((element) => {           // прошли по всем элементам массива
     renderPhoto(element.name, element.link);
   });
+
+  formAddPhotoElement.addEventListener("submit", formAddSubmitHandler);
 }
 
 function renderPhoto(name, link) {
@@ -54,7 +59,7 @@ function renderPhoto(name, link) {
 
   const cardElement = cardTemplate.cloneNode(true); // клонировали c вложением
 
-  cardContainer.append(cardElement); // вставили в конец контейнера
+  cardContainer.prepend(cardElement); // вставили в начало контейнера
 }
 
 function openPopup(popupElement) {
@@ -73,6 +78,14 @@ function formSubmitHandler(evt) {
   nameElement.textContent = nameInput.value; // значения из input переносим на сайт
   jobElement.textContent = jobInput.value;
   closePopup(popupEditProfileElement);
+}
+
+function formAddSubmitHandler(evt) {
+  evt.preventDefault();
+  const name = namePlaceInput.value;
+  const link = linkInput.value;
+  renderPhoto(name, link);
+  closePopup(popupAddPhotoElement);
 }
 
 buttonEditProfile.addEventListener("click", function () {
