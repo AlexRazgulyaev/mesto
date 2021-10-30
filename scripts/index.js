@@ -49,7 +49,7 @@ function main() {
     renderPhoto(element.name, element.link);
   });
 
-  formAddPhotoElement.addEventListener("submit", formAddSubmitHandler);
+  formAddPhotoElement.addEventListener("submit", formAddSubmitHandler);  // слушаем кнопку добавить фото
 }
 
 function renderPhoto(name, link) {
@@ -82,9 +82,9 @@ function formSubmitHandler(evt) {
 
 function formAddSubmitHandler(evt) {
   evt.preventDefault();
-  const name = namePlaceInput.value;
+  const name = namePlaceInput.value;      // значения из input добавления фото
   const link = linkInput.value;
-  renderPhoto(name, link);
+  renderPhoto(name, link);                // отрисовываем фото
   closePopup(popupAddPhotoElement);
 }
 
