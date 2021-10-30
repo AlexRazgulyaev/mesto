@@ -1,9 +1,7 @@
 const buttonEditProfile = document.querySelector(".profile__edit-button");          // кнопка редактирования профиля
 const popupEditProfileElement = document.querySelector(".popup_type_edit-profile"); // popup c редактированием профиля
-const buttonCloseProfile =
-  popupEditProfileElement.querySelector(".popup__close");                          // кнопка закрытия popup
-const formEditProfileElement =
-  popupEditProfileElement.querySelector(".popup__container");                      // форма редактирования профиля
+const buttonCloseProfile = popupEditProfileElement.querySelector(".popup__close");          // кнопка закрытия popup
+const formEditProfileElement = popupEditProfileElement.querySelector(".popup__container");  // форма редактирования профиля
 const nameInput = formEditProfileElement.querySelector(".popup__input_type_name"); // name в input
 const jobInput = formEditProfileElement.querySelector(".popup__input_type_job");   // job в input
 const buttonAddPhoto = document.querySelector(".profile__add-button");             // кнопка добавления фото
