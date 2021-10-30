@@ -59,6 +59,8 @@ function renderPhoto(name, link) {
 
   const cardElement = cardTemplate.cloneNode(true); // клонировали c вложением
 
+  cardElement.querySelector(".cards__like").addEventListener("click", likePhotoHandler); // слушаем клик по элементу like
+
   cardContainer.prepend(cardElement); // вставили в начало контейнера
 }
 
@@ -72,14 +74,12 @@ function openPopup(popupElement) {
 function closePopup(popupElement) {
   popupElement.classList.remove("popup_opened");
 }
-
-function formSubmitHandler(evt) {
+function formProfileSubmitHandler(evt) {
   evt.preventDefault();
   nameElement.textContent = nameInput.value; // значения из input переносим на сайт
   jobElement.textContent = jobInput.value;
   closePopup(popupEditProfileElement);
 }
-
 function formAddSubmitHandler(evt) {
   evt.preventDefault();
   const name = namePlaceInput.value;      // значения из input добавления фото
@@ -87,11 +87,14 @@ function formAddSubmitHandler(evt) {
   renderPhoto(name, link);                // отрисовываем фото
   closePopup(popupAddPhotoElement);
 }
+function likePhotoHandler(evt) {
+ evt.target.closest(".cards__like").classList.toggle("cards__like_active");  //находим ближайшей элемент like и переключаем модификатор
+}
 
 buttonEditProfile.addEventListener("click", function () {
   openPopup(popupEditProfileElement);
 });
-formEditProfileElement.addEventListener("submit", formSubmitHandler);
+formEditProfileElement.addEventListener("submit", formProfileSubmitHandler);
 buttonAddPhoto.addEventListener("click", function () {
   openPopup(popupAddPhotoElement);
 });
