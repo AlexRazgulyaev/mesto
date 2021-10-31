@@ -10,6 +10,10 @@ const buttonCloseAddPhoto = popupAddPhotoElement.querySelector(".popup__close");
 const formAddPhotoElement = popupAddPhotoElement.querySelector(".popup__container");  // форма добавления фото
 const namePlaceInput = formAddPhotoElement.querySelector(".popup__input_type_name-place"); // название места в input
 const linkInput = formAddPhotoElement.querySelector(".popup__input_type_link");            // ссылка на место в input
+const popupPhoto = document.querySelector(".popup_type_image");                    // popup фото
+const buttonClosePhoto = popupPhoto.querySelector(".popup__close");                // кнопка закрытия popup с фото
+const photoElement = popupPhoto.querySelector(".popup__image");                    // элемент с фото
+const photoTitleElement = popupPhoto.querySelector(".popup__photo-title");         // элемент с подписью
 const nameElement = document.querySelector(".profile__name");                      // name на сайте
 const jobElement = document.querySelector(".profile__about-me");                   // job на сайте
 const initialCards = [                                                             // массив фотографий
@@ -40,7 +44,6 @@ const initialCards = [                                                          
 ];
 const cardContainer = document.querySelector(".cards"); // получили контейнер
 const cardTemplate = document.querySelector(".card-template").content; // получили template
-
 const cardImageElement = cardTemplate.querySelector(".cards__image"); // находим в template фото
 const cardTitleElement = cardTemplate.querySelector(".cards__title"); // находим в template заголовок
 
@@ -61,7 +64,7 @@ function renderPhoto(name, link) {
 
   cardElement.querySelector(".cards__like").addEventListener("click", likePhotoHandler); // слушаем клик по элементу like
   cardElement.querySelector(".cards__delete").addEventListener("click", deletePhotoHandler); // слушаем клик по элементу delete
-
+  cardElement.querySelector(".cards__image").addEventListener("click", openPhoto);   // слушаем клик по картинке
   cardContainer.prepend(cardElement); // вставили в начало контейнера
 }
 
@@ -91,9 +94,16 @@ function formAddSubmitHandler(evt) {
 function likePhotoHandler(evt) {
  evt.target.closest(".cards__like").classList.toggle("cards__like_active");  //находим ближайшей элемент like и переключаем модификатор
 }
-
 function deletePhotoHandler(evt) {
   evt.target.closest(".cards__card").remove();   //находим ближайшую карточку и удаляем
+}
+function openPhoto(evt) {
+  popupPhoto.classList.add("popup_opened");
+  const photo = evt.target.closest(".cards__image");                                // находим ближайшую картинку
+  const title = evt.target.closest(".cards__card").querySelector(".cards__title");  // находим ближайший текст картинки
+  photoElement.src = photo.src;                        // элементу с фото присваиваем src
+  photoElement.alt = photo.alt;                        // элементу с фото присваиваем alt
+  photoTitleElement.textContent = title.textContent;   // элементу с подписью присваиваем текст
 }
 
 buttonEditProfile.addEventListener("click", function () {
@@ -109,5 +119,8 @@ buttonCloseProfile.addEventListener("click", function () {
 buttonCloseAddPhoto.addEventListener("click", function () {
   closePopup(popupAddPhotoElement);
 });
+buttonClosePhoto.addEventListener("click", function() {
+  closePopup(popupPhoto);
+})
 
 main();
