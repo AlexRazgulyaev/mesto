@@ -33,68 +33,69 @@
         </section>
 
         <section class="elements">
-          <ul class="cards">
-          </ul>
+          <ul class="cards"></ul>
         </section>
-
-        <div class="popup popup_type_edit-profile">
-          <div class="popup__window">
-            <button type="button" class="popup__close link"></button>
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form name="profile-form" class="popup__container">
-              <input
-                type="text"
-                name="name"
-                value=""
-                class="popup__input popup__input_type_name"
-              />
-              <input
-                type="text"
-                name="job"
-                value=""
-                class="popup__input popup__input_type_job"
-              />
-              <button class="popup__submit link" type="submit">
-                Сохранить
-              </button>
-            </form>
-          </div>
-        </div>
-        <div class="popup popup_type_add-photo">
-          <div class="popup__window">
-            <button type="button" class="popup__close link"></button>
-            <h2 class="popup__title">Новое место</h2>
-            <form name="add-photo-form" class="popup__container">
-              <input
-                type="text"
-                name="name"
-                placeholder="Название"
-                value=""
-                class="popup__input popup__input_type_name-place"
-              />
-              <input
-                type="text"
-                name="link"
-                placeholder="Ссылка на картинку"
-                value=""
-                class="popup__input popup__input_type_link"
-              />
-              <button class="popup__submit link" type="submit">Создать</button>
-            </form>
-          </div>
-        </div>
-        <div class="popup popup_type_image">
-          <div class="popup__photo">
-            <button type="button" class="popup__close link"></button>
-            <img src="#" alt="" class="popup__image">
-            <h2 class="popup__photo-title"></h2>
-          </div>
-        </div>
       </main>
 
       <footer class="footer page__footer">
         <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
       </footer>
+    </div>
+
+    <div class="popup popup_type_edit-profile">
+      <div class="popup__window">
+        <button type="button" class="popup__close link"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form name="profile-form" class="popup__container">
+          <input
+            type="text"
+            name="name"
+            value=""
+            required
+            class="popup__input popup__input_type_name"
+          />
+          <input
+            type="text"
+            name="job"
+            value=""
+            required
+            class="popup__input popup__input_type_job"
+          />
+          <button class="popup__submit link" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_type_add-photo">
+      <div class="popup__window">
+        <button type="button" class="popup__close link"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form name="add-photo-form" class="popup__container">
+          <input
+            type="text"
+            name="name"
+            placeholder="Название"
+            value=""
+            required
+            class="popup__input popup__input_type_name-place"
+          />
+          <input
+            type="url"
+            name="link"
+            placeholder="Ссылка на картинку"
+            value=""
+            required
+            class="popup__input popup__input_type_link"
+          />
+          <button class="popup__submit link" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_type_image">
+      <div class="popup__photo">
+        <button type="button" class="popup__close link"></button>
+        <img src="#" alt="" class="popup__image" />
+        <h2 class="popup__photo-title"></h2>
+      </div>
     </div>
 
     <template class="card-template">
@@ -104,10 +105,15 @@
           <h2 class="cards__title"></h2>
           <button type="button" class="cards__like link"></button>
         </div>
-        <img src="./images/delete-button.svg" alt="Удалить" class="cards__delete link">
+        <img
+          src="./images/delete-button.svg"
+          alt="Удалить"
+          class="cards__delete link"
+        />
       </li>
     </template>
 
+    <script src="./scripts/initial-cards.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
