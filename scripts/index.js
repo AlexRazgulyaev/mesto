@@ -27,14 +27,15 @@ function renderCards() {
 }
 
 function createCard(name, link) {
-  const cardImageElement = cardTemplate.querySelector(".cards__image");  // находим в template фото
-  const cardTitleElement = cardTemplate.querySelector(".cards__title");  // находим в template заголовок
+  const cardElement = cardTemplate.cloneNode(true); // клонировали c вложением
+  const cardImageElement = cardElement.querySelector(".cards__image");  // находим в клонированном элементе фото
+  const cardTitleElement = cardElement.querySelector(".cards__title");  // находим в клонированном элементе заголовок
 
   cardTitleElement.textContent = name; // присвоили из массива заголовок
   cardImageElement.src = link; // присвоили из массива ссылку на фото
-  cardImageElement.alt = name; // присвоили из массива alt фото
+  cardImageElement.alt = `Изображение: ${name}`; // присвоили из массива alt фото
 
-  const cardElement = cardTemplate.cloneNode(true); // клонировали c вложением
+  // const cardElement = cardTemplate.cloneNode(true); // клонировали c вложением
 
   cardElement.querySelector(".cards__like").addEventListener("click", likePhotoHandler); // слушаем клик по элементу like
   cardElement.querySelector(".cards__delete").addEventListener("click", deletePhotoHandler); // слушаем клик по элементу delete
@@ -54,10 +55,10 @@ function renderNewPhoto(name, link) {           //отрисовали доба�
 function openPopup(popupElement) {
   popupElement.classList.add("popup_opened");
 }
-function openPopupProfile(popupElement) {    // открытие popup с профилем
+function openPopupProfile() {    // открытие popup с профилем
   nameInput.value = nameElement.textContent; // то значения с сайта переносим в input
   jobInput.value = jobElement.textContent;
-  openPopup(popupElement);
+  openPopup(popupEditProfileElement);
 }
 function closePopup(popupElement) {
   popupElement.classList.remove("popup_opened");
@@ -92,9 +93,7 @@ function openPhoto(evt) {
   photoTitleElement.textContent = title.textContent;   // элементу с подписью присваиваем текст
 }
 
-buttonEditProfile.addEventListener("click", () => {
-  openPopupProfile(popupEditProfileElement);
-});
+buttonEditProfile.addEventListener("click", openPopupProfile);
 formEditProfileElement.addEventListener("submit", formProfileSubmitHandler);
 buttonAddPhoto.addEventListener("click", () => {
   openPopup(popupAddPhotoElement);
