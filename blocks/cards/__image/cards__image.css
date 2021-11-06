@@ -3,3 +3,7 @@
   min-height: 282px;
   margin-bottom: 25px;
 }
+
+.cards__image:hover {
+  cursor: pointer;
+}
